@@ -35,15 +35,20 @@
             <ul>
                 <li><%= title %></li>
                 <li><%= author %></li>
-                <li><%= releaseDate %></li>
-                <li><%= keywords %></li>
+                <li><%= $.format.date( new Date( releaseDate ), 'MMMM yyyy' ) %></li>
+                <li>
+                    <% _.each(keywords, function( keyobj ) { %>
+                        <%= keyobj.keyword %>
+                    <% }) %>
+                </li>
             </ul>
             <button class="delete">Delete</button>
         </script>
 
 		<script src="js/lib/jquery-min.js"></script>
+        <script src="js/lib/jquery-dateFormat.min.js"></script>
 		<script src="js/lib/underscore-min.js"></script>
-		<script src="js/lib/backbone-min.js"></script>
+        <script src="js/lib/backbone-min.js"></script>
 		<script src="js/models/book.js"></script>
 		<script src="js/collections/library.js"></script>
 		<script src="js/views/book.js"></script>

@@ -27,7 +27,7 @@ app.LibraryView = Backbone.View.extend({
             }
         });
 
-        this.collection.add( new app.Book(formData) );
+        this.collection.create( formData );
     },
 
     // Pega cada item da colecao e aplica renderBook
